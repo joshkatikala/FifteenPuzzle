@@ -6,7 +6,7 @@ body {
     font-family: "Garamond";
 }
 
-#puzzle{
+#puzzle {
     background-color: white;
     width: 400px;
     height: 400px;
@@ -16,14 +16,14 @@ body {
     border: 2px solid black;
 }
 
-#output{
+#output { 
     font-size: 40px;
     color: red;
     text-align: center;
     padding: 2px;
 }
 
-.animation{
+.animation {
   -webkit-transition: .6s;
   -moz-transition: .6s;
   -ms-transition: .6s;
@@ -31,7 +31,7 @@ body {
   transition: .6s;
 }
 
-.cells{
+.cells {
     border: 2px solid black;
     width: 98px;
     height: 98px;
@@ -44,88 +44,102 @@ body {
     position:absolute;
 }
 
-/*.cells:hover{
+/*.cells:hover {
     border-color:red;
     color:red;
     cursor:pointer;
 }*/
 
-#tile1{
-    /*background:url(background.jpg);*/
+#tile1 {
     background-position: 0px 0px;
 }
-#tile2{
-    /*background:url(background.jpg);*/
-    background-position: -100px 0px;}
-#tile3{
-    /*background:url(background.jpg);*/
-    background-position: -200px 0px;}
-#tile4{
-    /*background:url(background.jpg);*/
-    background-position: -300px 0px;}
-#tile5{
-    /*background:url(background.jpg);*/
-    background-position: 0px -100px;}
-#tile6{
-    /*background:url(background.jpg);*/
-    background-position: -100px -100px;}
-#tile7{
-    /*background:url(background.jpg);*/
-    background-position: -200px -100px;}
-#tile8{
-    /*background:url(background.jpg);*/
-    background-position: -300px -100px;}
-#tile9{
-    /*background:url(background.jpg);*/
-    background-position: 0px -200px;}
-#tile10{
-    /*background:url(background.jpg);*/
-    background-position: -100px -200px;}
-#tile11{
-    /*background:url(background.jpg);*/
-    background-position: -200px -200px;}
-#tile12{
-    /*background:url(background.jpg);*/
-    background-position: -300px -200px;}
-#tile13{
-    /*background:url(background.jpg);*/
-    background-position: 0px -300px;}
-#tile14{
-    /*background:url(background.jpg);*/
-    background-position: -100px -300px;}
-#tile15{
-    /*background:url(background.jpg);*/
-    background-position: -200px -300px;}
-
-#tile16{
+#tile2 {
+    background-position: -100px 0px;
+}
+#tile3 {
+    background-position: -200px 0px;
+}
+#tile4 {
+    background-position: -300px 0px;
+}
+#tile5 {
+    background-position: 0px -100px;
+}
+#tile6 {
+    background-position: -100px -100px;
+}
+#tile7 {
+    background-position: -200px -100px;
+}
+#tile8 {
+    background-position: -300px -100px;
+}
+#tile9 {
+    background-position: 0px -200px;
+}
+#tile10 {
+    background-position: -100px -200px;
+}
+#tile11 {
+    background-position: -200px -200px;
+}
+#tile12 {
+    background-position: -300px -200px;
+}
+#tile13 {
+    background-position: 0px -300px;
+}
+#tile14 {
+    background-position: -100px -300px;
+}
+#tile15 {
+    background-position: -200px -300px;
+}
+#tile16 {
     display: none;
 }
 
 .button1 {
-
+    background-color: #D3D3D3;
+    border: 1px solid #333;
+    color: #333;
+    padding: 8px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 0 auto;
+    cursor: pointer;
 }
 
-#timerbox{
-    border-style: solid;
-    display:inline;
-    border-width: 2px;
-    border-color: #B0B0B0 ;
+.button1:hover {
+    background-color: #333;
+    color: #D3D3D3;
+    border: 1px solid #D3D3D3;
+}
+
+#timerbox { 
+    display: inline-block; 
+    border: 2px solid #D3D3D3;
     font-size: 10pt;
     padding: 10px;
-    float:left;
+    float: right;
+    margin-top: -230px;
+
 }
 
-#movebox{
-    border-style: solid;
-    display:inline;
-    border-width: 2px;
-    border-color: #B0B0B0 ;
+#movebox {
+    display: inline-block;
+    border: 2px solid #D3D3D3;
     font-size: 10pt;
     padding: 10px;
-    float:right;
+    float: right;
+    margin-top: -170px;
 }
 
-#bi {
+.bi {
+    width: 100%;
+    height: 400px;
     margin-top: 20px;
     background-color: black;
 }
@@ -133,4 +147,8 @@ body {
 .bgimage {
     width: 200px;
     height: 200px;
+}
+
+.space {
+    margin-top: 10px;
 }

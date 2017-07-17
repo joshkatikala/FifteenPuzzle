@@ -9,9 +9,7 @@
 	<body>
 
 		
-		<div id="puzzle">
-
-		</div>
+		<div id="puzzle"></div>
 
 		<p id="controls">
 			<button id="shufflebutton" class="button1" onclick="start()">Shuffle</button>
@@ -20,6 +18,7 @@
 		<div id="output"></div>
 
 		<div class="bi">
+			<div class="space"></div>
 			<h3>Pick a background image you like</h3>
 			<form>
 			<input type="radio" name="image" id="1"><img src="./background1.jpg" class="bgimage" />
@@ -28,7 +27,8 @@
 			<input type="radio" name="image" id="4"><img src="./background4.jpg" class="bgimage" />
 			<input type="radio" name="image" id="5"><img src="./background5.jpg" class="bgimage" />
 			</form>
-			<button onclick="setBackgroundImg();">Select Image</button>
+			<div class="space"></div>
+			<button class="button1" onclick="setBackgroundImg();">Select Image</button>
 		</div>
 
 
