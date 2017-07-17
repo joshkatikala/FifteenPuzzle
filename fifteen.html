@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<link href="fifteen.css" type="text/css" rel="stylesheet" />
+		<script src="fifteen.js" type="text/javascript"></script>
+	</head>
+
+	<body>
+
+		
+		<div id="puzzle">
+
+		</div>
+
+		<p id="controls">
+			<button id="shufflebutton" class="button1" onclick="start()">Shuffle</button>
+		</p>
+		
+		<div id="output"></div>
+
+		<div class="bi">
+			<h3>Pick a background image you like</h3>
+			<form>
+			<input type="radio" name="image" id="2"><img src="./background2.jpg" class="bgimage" />
+			<input type="radio" name="image" id="3"><img src="./background3.jpg" class="bgimage" />
+			<input type="radio" name="image" id="4"><img src="./background4.jpg" class="bgimage" />
+			<input type="radio" name="image" id="5"><img src="./background5.jpg" class="bgimage" />
+			</form>
+			<button onclick="setBackgroundImg();">Select Image</button>
+		</div>
+
+
+	</body>
+</html>
