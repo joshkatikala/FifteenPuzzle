@@ -10,50 +10,11 @@ var cols = 4;
 var number = 1;
 var moveCount = 0;
 
-
-function setup(){ 
-    var timing = document.createElement("div");
-    timing.id = "timerbox";
-    document.getElementById("controls").appendChild(timing);
-
-    var moving = document.createElement("div");
-    moving.id = "movebox";
-    document.getElementById("controls").appendChild(moving);
-
-    var x = document.querySelectorAll(".cells");
-    for (var i =0; i<x.length; i++){ 
-        var tile = x[i];
-        correctPositions.push(tile.style.top);
-        correctPositions2.push(tile.style.left);
-    }
-}
-
-function backgroundImg(){
-    var rand = Math.floor((Math.random() * 5) + 1);
-    for(var j = 1; j <= 16; j++){
-        var t = "tile"+j;
-        var tId = document.getElementById(t);
-        tId.style.backgroundImage = "url('background" + rand + ".jpg')";
-    }
-}
-
-function setBackgroundImg(){
-    for(var i = 1; i <= 5; i++){
-        if(document.getElementById(i).checked == true){
-            for(var j = 1; j < 16; j++){
-                var t = "tile"+j;
-                var tId = document.getElementById(t);
-                tId.style.backgroundImage = "url('background" + i + ".jpg')";
-            }
-        }
-    }
-}
-
 function createPuzzle() { 
     for(var i = 0; i < cols; i++){
         for(var j = 0; j < rows; j++){
             var newCell = document.createElement("div");
-            newCell.id = "tile"+number;
+            newCell.id = "cell"+number;
             newCell.className = "cells";
             newCell.style.left = (j * 100) + "px";
             newCell.style.top = (i * 100) + "px";
@@ -68,14 +29,54 @@ function createPuzzle() {
     }   
 }
 
+
+function setup(){ 
+    var c = document.querySelectorAll(".cells");
+    for (var i =0; i < c.length; i++){ 
+        var cell = c[i];
+        correctPositions.push(cell.style.top);
+        correctPositions2.push(cell.style.left);
+    }
+
+    var t = document.createElement("div");
+    t.id = "timecont";
+    document.getElementById("more").appendChild(t);
+
+    var m = document.createElement("div");
+    m.id = "moveCounter";
+    document.getElementById("more").appendChild(m);
+}
+
+function backgroundImg(){
+    var rand = Math.floor((Math.random() * 5) + 1);
+    for(var j = 1; j <= 16; j++){
+        var t = "cell"+j;
+        var tId = document.getElementById(t);
+        tId.style.backgroundImage = "url('background" + rand + ".jpg')";
+    }
+}
+
+function setBackgroundImg(){
+    for(var i = 1; i <= 5; i++){
+        if(document.getElementById(i).checked == true){
+            for(var j = 1; j < 16; j++){
+                var t = "cell"+j;
+                var tId = document.getElementById(t);
+                tId.style.backgroundImage = "url('background" + i + ".jpg')";
+            }
+        }
+    }
+}
+
+
 function hoverCheck(){ 
-    var tile = document.getElementById(this.id);
-    var empty = document.getElementById("tile16");
+    var cell = document.getElementById(this.id);
+    var empty = document.getElementById("cell16");
     
     var emptyLeft = empty.style.left; 
     var emptyTop = empty.style.top;   
-    var currentTop = tile.style.top;  
-    var currentLeft = tile.style.left;
+    var currentTop = cell.style.top;  
+    var currentLeft = cell.style.left;
     var noCurrentTop = parseInt(currentTop);
     var leftDiff = Math.abs(parseInt(currentLeft) - parseInt(emptyLeft));
     var topDiff = Math.abs(parseInt(currentTop) - parseInt(emptyTop));
@@ -97,13 +98,14 @@ function noHover(){
 
 function moveCell(){ 
     checkCorrect();
-    var tile = document.getElementById(this.id);
-    var empty = document.getElementById("tile16");
+    document.getElementById("response").innerHTML = "";
+    var cell = document.getElementById(this.id);
+    var empty = document.getElementById("cell16");
     
     var emptyLeft = empty.style.left; 
     var emptyTop = empty.style.top;   
-    var currentTop = tile.style.top;  
-    var currentLeft = tile.style.left;
+    var currentTop = cell.style.top;  
+    var currentLeft = cell.style.left;
     var noCurrentTop = parseInt(currentTop);
     var leftDiff = Math.abs(parseInt(currentLeft) - parseInt(emptyLeft));
     var topDiff = Math.abs(parseInt(currentTop) - parseInt(emptyTop));
@@ -116,7 +118,7 @@ function moveCell(){
         empty.style.left = currentLeft;
         setTimeout(function(){document.getElementsByClassName("cells")[mv].classList.remove("animation");},2000);
         moveCount++;
-        document.getElementById("movebox").innerHTML="Moves: " +moveCount; 
+        document.getElementById("moveCounter").innerHTML="Moves: " +moveCount; 
     }
     checkCorrect();
 }
@@ -124,30 +126,31 @@ function moveCell(){
 function checkCorrect(){ 
     var check = 0, xtop, xleft;
     var x = document.querySelectorAll(".cells"); 
-    for(var i = 0; i<x.length; i++){ 
+    for(var i = 0; i < x.length; i++){ 
         
         xtop = window.getComputedStyle(x[i]).getPropertyValue("top");
         xleft = window.getComputedStyle(x[i]).getPropertyValue("left");
 
-        if(correctPositions[i]==xtop){
-            if(correctPositions2[i]== xleft){
-                check++;}
+        if(correctPositions[i] == xtop){
+            if(correctPositions2[i] == xleft){
+                check++;
+            }
         }
     }
 
-    if(check==15){
-        document.getElementById("output").innerHTML='you win test';
+    if(check == 15){
+        document.getElementById("response").innerHTML='you win test';
         clearInterval(time);
     }
 }
 
-function start(){
+function shuffle(){
     var count = 0;
     moveCount = 0;
     time = setInterval(function(){timer()},1000);
-    document.getElementById("output").innerHTML = "";
+    document.getElementById("response").innerHTML = "";
     for(var j=0; j<1000;j++){
-        var empty = document.getElementById("tile16");
+        var empty = document.getElementById("cell16");
         var emptyLeft = empty.style.left; 
         var emptyTop = empty.style.top; 
 
@@ -155,9 +158,9 @@ function start(){
         var x = document.querySelectorAll(".cells");
         for(var i =0; i<x.length; i++){ 
 
-            var tile = x[i];
-            var currentTop = tile.style.top;  
-            var currentLeft = tile.style.left;
+            var cell = x[i];
+            var currentTop = cell.style.top;  
+            var currentLeft = cell.style.left;
             
             var leftDiff = Math.abs(parseInt(currentLeft) - parseInt(emptyLeft));
             var topDiff = Math.abs(parseInt(currentTop) - parseInt(emptyTop));
@@ -167,15 +170,15 @@ function start(){
         }
         
         var rand = movable[Math.round(Math.random()*(movable.length-1))]; 
-        var movabletile = x[rand];
-        var movabletiletop = movabletile.style.top;
-        var movabletileleft = movabletile.style.left;
-        movabletile.style.top = emptyTop; 
-        movabletile.style.left = emptyLeft;
-        var mv = parseInt(movabletile.id.replace( /[^\d.]/g, "" )-1);
+        var movableCell = x[rand];
+        var movableCellTop = movableCell.style.top;
+        var movableCellLeft = movableCell.style.left;
+        movableCell.style.top = emptyTop; 
+        movableCell.style.left = emptyLeft;
+        var mv = parseInt(movableCell.id.replace( /[^\d.]/g, "" )-1);
         document.getElementsByClassName("cells")[mv].classList.add("animation");
-        empty.style.top = movabletiletop;
-        empty.style.left = movabletileleft;  
+        empty.style.top = movableCellTop;
+        empty.style.left = movableCellLeft;  
        
     } 
 }
@@ -187,6 +190,6 @@ function timer(){
         secs = 0;
     }
     secs++;
-    timestamp="Time: "+mins+":"+secs;
-    document.getElementById("timerbox").innerHTML = timestamp;
+    timestamp=""+mins+":"+secs;
+    document.getElementById("timecont").innerHTML = timestamp;
 }
