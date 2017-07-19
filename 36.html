@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<link href="36.css" type="text/css" rel="stylesheet" />
+		<script src="36.js" type="text/javascript"></script>
+	</head>
+
+	<body>
+		<hr>
+			
+		<form action="fifteen.html" id="newgame1">
+							<button id="newgame">New Game</button>
+					</form>
+		<form action="rules.html" id="newgame1">
+							<button id="newgame">Rules</button>
+					</form>
+		<form action="pics.html" id="newgame1">
+							<button id="newgame">Photos Used</button>
+					</form>
+		<form action="about.html" id="newgame1">
+							<button id="newgame">About Us</button>
+					</form>
+			<hr>
+
+		
+		<div id="puzzle"></div>
+
+		<p id="more">
+			<button id="shuffle" class="button1" onclick="shuffle();">Shuffle</button>
+		</p>
+		
+		<div id="response"></div>
+				<p id="zoom">YOU WIN!!</p> 
+
+		<div id="moredims">
+			<a href="./nine.html"><button id="shuffle" class="button1">3x3</button></a>
+			<a href="./fifteen.html"><button id="shuffle" class="button1">4x4</button></a>
+		</div>
+
+		<div class="bi">
+			<div class="space"></div>
+			<h3>Pick a background image you like</h3>
+			<form>
+			<input type="radio" name="image" id="1"><img src="./sbackground1.jpg" class="bgimage" />
+			<input type="radio" name="image" id="2"><img src="./sbackground2.jpg" class="bgimage" />
+			<input type="radio" name="image" id="3"><img src="./sbackground3.jpg" class="bgimage" />
+			<input type="radio" name="image" id="4"><img src="./sbackground4.jpg" class="bgimage" />
+			<input type="radio" name="image" id="5"><img src="./sbackground5.jpg" class="bgimage" />
+			</form>
+			<div class="space"></div>
+			<button class="button1" onclick="setBackgroundImg();">Select Image</button>
+		</div>
+
+
+	</body>
+</html>

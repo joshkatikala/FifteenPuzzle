@@ -110,8 +110,10 @@ function checkCorrect(){
     }
 
     if(check == 15){
-        document.getElementById("response").innerHTML="you win test";
         clearInterval(time);
+		
+		  document.getElementById("zoom").style.display = "block";
+		     document.body.style.backgroundImage  = "url('fireworks.gif')";
     }
 }
 
