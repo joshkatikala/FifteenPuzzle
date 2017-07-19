@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<link href="nine.css" type="text/css" rel="stylesheet" />
+		<script src="nine.js" type="text/javascript"></script>
+	</head>
+
+	<body>
+
+		<div id="tpuzzle"></div>
+
+		<p id="more">
+			<button id="shuffle" class="button1" onclick="shuffle();">Shuffle</button>
+		</p>
+		
+		<div id="response"></div>
+
+		<div id="moredims">
+			<a href="../fifteen.html"><button id="shuffle" class="button1">4x4</button></a>
+			<a href="./36.html"><button id="shuffle" class="button1">6x6</button></a>
+		</div>
+
+		<div class="bi">
+			<div class="space"></div>
+			<h3>Pick a background image you like</h3>
+			<form>
+			<input type="radio" name="image" id="1"><img src="./tbackground1.jpg" class="bgimage" />
+			<input type="radio" name="image" id="2"><img src="./tbackground2.jpg" class="bgimage" />
+			<input type="radio" name="image" id="3"><img src="./tbackground3.jpg" class="bgimage" />
+			<input type="radio" name="image" id="4"><img src="./tbackground4.jpg" class="bgimage" />
+			<input type="radio" name="image" id="5"><img src="./tbackground5.jpg" class="bgimage" />
+			</form>
+			<div class="space"></div>
+			<button class="button1" onclick="setTBackgroundImg();">Select Image</button>
+		</div>
+
+
+	</body>
+</html>

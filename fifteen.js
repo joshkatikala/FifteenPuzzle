@@ -9,6 +9,7 @@ var rows = 4;
 var cols = 4;
 var number = 1;
 var moveCount = 0;
+var tnum = 1;
 
 function createPuzzle() { 
     for(var i = 0; i < cols; i++){
@@ -28,7 +29,6 @@ function createPuzzle() {
         }
     }   
 }
-
 
 function setup(){ 
     var c = document.querySelectorAll(".cells");
@@ -96,41 +96,12 @@ function noHover(){
         this.style.cursor = "default";
 }
 
-function moveCell(){ 
-    checkCorrect();
-    document.getElementById("response").innerHTML = "";
-    var cell = document.getElementById(this.id);
-    var empty = document.getElementById("cell16");
-    
-    var emptyLeft = empty.style.left; 
-    var emptyTop = empty.style.top;   
-    var currentTop = cell.style.top;  
-    var currentLeft = cell.style.left;
-    var noCurrentTop = parseInt(currentTop);
-    var leftDiff = Math.abs(parseInt(currentLeft) - parseInt(emptyLeft));
-    var topDiff = Math.abs(parseInt(currentTop) - parseInt(emptyTop));
-    if((leftDiff == 100 && topDiff == 0) || (topDiff ==100 && leftDiff == 0)){
-        this.style.top = emptyTop;
-        this.style.left = emptyLeft;
-        var mv = parseInt(this.id.replace( /[^\d.]/g, "" )-1);
-        document.getElementsByClassName("cells")[mv].classList.add("animation");
-        empty.style.top = currentTop;
-        empty.style.left = currentLeft;
-        setTimeout(function(){document.getElementsByClassName("cells")[mv].classList.remove("animation");},2000);
-        moveCount++;
-        document.getElementById("moveCounter").innerHTML="Moves: " +moveCount; 
-    }
-    checkCorrect();
-}
-
 function checkCorrect(){ 
     var check = 0, xtop, xleft;
     var x = document.querySelectorAll(".cells"); 
     for(var i = 0; i < x.length; i++){ 
-        
         xtop = window.getComputedStyle(x[i]).getPropertyValue("top");
         xleft = window.getComputedStyle(x[i]).getPropertyValue("left");
-
         if(correctPositions[i] == xtop){
             if(correctPositions2[i] == xleft){
                 check++;
@@ -139,32 +110,59 @@ function checkCorrect(){
     }
 
     if(check == 15){
-        document.getElementById("response").innerHTML='you win test';
+        document.getElementById("response").innerHTML="you win test";
         clearInterval(time);
     }
+}
+
+function moveCell(){ 
+    checkCorrect();
+    document.getElementById("response").innerHTML = "";
+    var cell = document.getElementById(this.id);
+    var openCell = document.getElementById("cell16");
+    
+    var openLeft = openCell.style.left; 
+    var openTop = openCell.style.top;   
+    var currentTop = cell.style.top;  
+    var currentLeft = cell.style.left;
+    var noCurrentTop = parseInt(currentTop);
+    var leftDist = Math.abs(parseInt(currentLeft) - parseInt(openLeft));
+    var topDist = Math.abs(parseInt(currentTop) - parseInt(openTop));
+    if((leftDist == 100 && topDist == 0) || (topDist ==100 && leftDist == 0)){
+        this.style.top = openTop;
+        this.style.left = openLeft;
+        var mv = parseInt(this.id.replace( /[^\d.]/g, "" )-1);
+        document.getElementsByClassName("cells")[mv].classList.add("moveAnimation");
+        openCell.style.top = currentTop;
+        openCell.style.left = currentLeft;
+        setTimeout(function(){document.getElementsByClassName("cells")[mv].classList.remove("moveAnimation");},2000);
+        moveCount++;
+        document.getElementById("moveCounter").innerHTML="Moves: " +moveCount; 
+    }
+    checkCorrect();
 }
 
 function shuffle(){
     var count = 0;
     moveCount = 0;
-    time = setInterval(function(){timer()},1000);
+    time = setInterval(function(){timer();},1000);
     document.getElementById("response").innerHTML = "";
-    for(var j=0; j<1000;j++){
-        var empty = document.getElementById("cell16");
-        var emptyLeft = empty.style.left; 
-        var emptyTop = empty.style.top; 
 
+    for(var j = 0; j < 800; j++){
+        var openCell= document.getElementById("cell16");
+        var openLeft = openCell.style.left; 
+        var openTop = openCell.style.top; 
+        var rando = Math.floor(Math.random() + 4);
         var movable = []; 
         var x = document.querySelectorAll(".cells");
         for(var i =0; i<x.length; i++){ 
-
             var cell = x[i];
             var currentTop = cell.style.top;  
             var currentLeft = cell.style.left;
             
-            var leftDiff = Math.abs(parseInt(currentLeft) - parseInt(emptyLeft));
-            var topDiff = Math.abs(parseInt(currentTop) - parseInt(emptyTop));
-            if((leftDiff == 100 && topDiff == 0) || (topDiff ==100 && leftDiff == 0)){
+            var leftDist = Math.abs(parseInt(currentLeft) - parseInt(openLeft));
+            var topDist = Math.abs(parseInt(currentTop) - parseInt(openTop));
+            if((leftDist = 100 && topDist == 0) || (topDist ==100 && leftDist == 0)) {
                 movable.push(i);
             }
         }
@@ -173,23 +171,22 @@ function shuffle(){
         var movableCell = x[rand];
         var movableCellTop = movableCell.style.top;
         var movableCellLeft = movableCell.style.left;
-        movableCell.style.top = emptyTop; 
-        movableCell.style.left = emptyLeft;
+        movableCell.style.top = openTop; 
+        movableCell.style.left = openLeft;
         var mv = parseInt(movableCell.id.replace( /[^\d.]/g, "" )-1);
-        document.getElementsByClassName("cells")[mv].classList.add("animation");
-        empty.style.top = movableCellTop;
-        empty.style.left = movableCellLeft;  
-       
+        document.getElementsByClassName("cells")[mv].classList.add("moveAnimation");
+        openCell.style.top = movableCellTop;
+        openCell.style.left = movableCellLeft;  
     } 
 }
 
-var timestamp; 
+var timeString; 
 function timer(){
-    if(secs==60){
+    if(secs == 60){
         mins++;
         secs = 0;
     }
     secs++;
-    timestamp=""+mins+":"+secs;
-    document.getElementById("timecont").innerHTML = timestamp;
+    timeString = mins+":"+secs;
+    document.getElementById("timecont").innerHTML = timeString;
 }

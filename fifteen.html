@@ -1,7 +1,24 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title></title>
+		<title>Fifteen Puzzle</title>
+		<!--	
+			Group Members: Rasha Al Rawi, Joshua Katikala
+			Team Members: Rasha Al Rawi
+			CSc 4370 Web Programming
+			Due Date: 7/19/17
+			Project 3: Fifteen Puzzle
+
+			We created the Fifteen puzzle using HTML, CSS, and JS. 
+
+			Extra Features Implemented:
+			1) Multiple Backgrounds - see backgroundImg() [line 50] and setBackgroundImg() [line 59] in fifteen.js
+			2) Animation - used CSS animation to move the cells during shuffle and also when it is clicked. See line 81 in fifteen.css
+			3) End of game notification - see checkCorrect() [line 99] in fifteen.js
+			4) Game TIme - see timer() [line 184] and  checkCorrect(), specifically line 112 onwards.
+			5) Different Puzzle Sizes - only implemented two other puzzle sizes which can be seen when user selects a different dimension button.
+
+		-->
 		<link href="fifteen.css" type="text/css" rel="stylesheet" />
 		<script src="fifteen.js" type="text/javascript"></script>
 	</head>
@@ -12,10 +29,15 @@
 		<div id="puzzle"></div>
 
 		<p id="more">
-			<button id="shuffle" class="button1" onclick="shuffle()">Shuffle</button>
+			<button id="shuffle" class="button1" onclick="shuffle();">Shuffle</button>
 		</p>
 		
 		<div id="response"></div>
+
+		<div id="moredims">
+			<a href="./moredimensions/nine.html"><button id="shuffle" class="button1">3x3</button></a>
+			<a href="./moredimensions/36.html"><button id="shuffle" class="button1">6x6</button></a>
+		</div>
 
 		<div class="bi">
 			<div class="space"></div>

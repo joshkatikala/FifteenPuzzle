@@ -69,7 +69,7 @@ body {
 }
 
 #puzzle {
-    background-color: white;
+    background-color: #faebd7;
     width: 400px;
     height: 400px;
     margin-left: auto;
@@ -78,12 +78,12 @@ body {
     border: 2px solid black;
 }
 
-.animation {
+.moveAnimation {
+  transition: .6s;
   -webkit-transition: .6s;
   -moz-transition: .6s;
-  -ms-transition: .6s;
   -o-transition: .6s;
-  transition: .6s;
+  -ms-transition: .6s;
 }
 
 .button1 {
@@ -151,3 +151,18 @@ body {
 .space {
     margin-top: 10px;
 }
+
+#moredims{
+    width: 100%;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+a:visited {
+    color: #333;
+}
+

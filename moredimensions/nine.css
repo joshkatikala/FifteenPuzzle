@@ -1,0 +1,147 @@
+body {
+    background-color: #333;
+    font-size: 14pt;
+    text-align: center;
+    color: white;
+    font-family: "Garamond";
+}
+
+.tcells {
+    border: 2px solid black;
+    width: 99px;
+    height: 99px;
+    text-align: center;
+    font-size: 32pt;
+    font-family: "Garamond";
+    font-weight: 600;
+    color:white;
+    text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black;
+    position:absolute;
+}
+
+#tcell1 {
+    background-position: 0px 0px;
+}
+#tcell2 {
+    background-position: -100px 0px;
+}
+#tcell3 {
+    background-position: -200px 0px;
+}
+#tcell4 {
+    background-position: 0px -100px;
+}
+#tcell5 {
+    background-position: -100px -100px;
+}
+#tcell6 {
+    background-position: -200px -100px;
+}
+#tcell7 {
+    background-position: 0px -200px;
+}
+#tcell8 {
+    background-position: -100px -200px;
+}
+#tcell9 {
+    display: none;
+}
+
+#tpuzzle {
+    background-color: #faebd7;
+    width: 300px;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    border: 2px solid black;
+}
+
+.moveAnimation {
+  transition: .6s;
+  -webkit-transition: .6s;
+  -moz-transition: .6s;
+  -o-transition: .6s;
+  -ms-transition: .6s;
+}
+
+.button1 {
+    background-color: #D3D3D3;
+    border: 1px solid #333;
+    color: #333;
+    padding: 8px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.button1:hover {
+    background-color: #333;
+    color: #D3D3D3;
+    border: 1px solid #D3D3D3;
+}
+
+#response { 
+    font-size: 40px;
+    color: red;
+    text-align: center;
+    padding: 2px;
+}
+
+#timecont { 
+    display: inline-block; 
+    border: 2px solid #D3D3D3;
+    border-radius: 50%;
+    font-size: 10pt;
+    padding: 10px;
+    float: right;
+    margin-top: -230px;
+    height: 80px;
+    width: 80px;
+    text-align: center;
+    line-height: 80px;
+    background-color: #E94F64;
+}
+
+#moveCounter {
+    display: inline-block;
+    border: 2px solid #D3D3D3;
+    font-size: 10pt;
+    padding: 10px;
+    float: left;
+    margin-top: -230px;
+}
+
+.bi {
+    width: 100%;
+    height: 400px;
+    margin-top: 20px;
+    background-color: black;
+}
+
+.bgimage {
+    width: 200px;
+    height: 200px;
+}
+
+.space {
+    margin-top: 10px;
+}
+
+#moredims{
+    width: 100%;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+a:visited {
+    color: #333;
+}
+
