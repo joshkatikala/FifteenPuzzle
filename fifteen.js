@@ -110,14 +110,18 @@ function checkCorrect(){
     }
 
     if(check == 15){
-        document.getElementById("response").innerHTML="you win test";
+        document.getElementById("zoom").style.display = "block";
+        document.getElementById("response").innerHTML += "Time Taken: " +timeString+ "<br /> Moves: " +moveCount;
+        document.body.style.backgroundImage  = "url('fireworks.gif')";
         clearInterval(time);
     }
 }
 
 function moveCell(){ 
-    checkCorrect();
+    document.getElementById("zoom").style.display = "none";
     document.getElementById("response").innerHTML = "";
+    document.body.style.backgroundImage  = "none";
+    checkCorrect();
     var cell = document.getElementById(this.id);
     var openCell = document.getElementById("cell16");
     
@@ -146,7 +150,9 @@ function shuffle(){
     var count = 0;
     moveCount = 0;
     time = setInterval(function(){timer();},1000);
+    document.getElementById("zoom").style.display = "none";
     document.getElementById("response").innerHTML = "";
+    document.body.style.backgroundImage  = "none";
 
     for(var j = 0; j < 800; j++){
         var openCell= document.getElementById("cell16");
