@@ -171,7 +171,12 @@ a:visited {
 }
 
 a.foot{
+    text-decoration: underline;
     color: blue;
+}
+
+a.foot:hover {
+    color: red;
 }
 
 @-webkit-keyframes zoom {
