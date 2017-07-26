@@ -1,0 +1,175 @@
+body{
+	background-color: white	;
+}
+#titlee{
+	text-align: left;
+	font-size: 40px;
+	font-family: courier;
+	font-weight: bold;
+}
+.space{   
+	padding-left: 250px;
+}
+.space1{   
+	padding-left: 120px;
+}
+.space2{   
+	padding-left: 250px;
+}
+.space3{   
+	padding-left: 120px;
+}
+.slash{
+	font-size: 20px;
+	font-weight: bold;
+}
+input[type=text], select {
+    padding: 12px 20px;
+	display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: lightgreen;
+}
+
+div {
+    border-radius: 5px;
+    background-color: lightgray;
+    padding: 10px;
+	margin-left: 25%;
+	margin-right: 30%;
+	margin-top: 3%;
+	
+}
+#submit{
+	height: 10%;
+	width: 10%;
+	margin-left: 25%;
+}
+#brand{
+	border: 10px dotted black;
+    padding: 15px;
+    background: black;
+	color: white;
+	font-size: 45px;
+	font-family: georgia;
+}
+#brandpic{
+	width: 70px;
+	height: 60px;
+	
+}
+#in{
+	color:red;
+}
+.sizesize{
+	font-size: 110%;
+} 
+.txty{
+	display: none;
+}
+.textarea{
+    width: 15%;
+    height: 30%;
+    padding: 11px 10px;
+    border-radius: 1px;
+    background-color: white;
+    font-size: 20px;
+    resize: none;
+	display: inline;
+	
+	
+}
+.textarea:hover + .txty{
+    width: 15%;
+    height: 10%;
+    border-radius: 1px;
+    background-color: #f8f8f8;
+    font-size: 15px;
+    resize: none;
+	display: block;
+	margin-left: 300px;
+	width: 70%;
+	margin-bottom: 45px;
+		display: inline;
+
+
+}
+#dis{
+	width: 65px;
+	height: 35px;
+	    filter: brightness(50%);
+
+	
+}
+#vis{
+	width: 65px;
+	height: 35px;
+	    filter: brightness(50%);
+
+}
+#mas{
+	width: 65px;
+	height: 35px;
+	    filter: brightness(50%);
+
+}
+#ame{
+	width: 65px;
+	height: 35px;
+	    filter: brightness(50%);
+
+}
+#demoo{
+	margin-left: 50%;
+	border-bottom: 3px solid red;
+}
+/*****************************************************************END OF CREDIT CARD**************************/
+#label1{
+	font-size: 30px;
+	margin-left: 57%;
+}
+
+#label2{
+	font-size: 30px;
+		margin-left: 15%;
+}
+#labelp{
+	font-size: 30px;
+	margin-left: 18%;
+}
+#myNumber{
+	width: 60px;
+		font-size: 30px;
+		margin-left: 15%;
+}
+
+#ooo{
+	height: 60px;
+	width: 160px;
+}
+#labelp2{
+	font-size: 30px;
+	margin-left: 17%;
+}
+#labelp3{
+	font-size: 30px;
+	margin-left: 17%;
+}
+#myNumber2{
+	width: 60px;
+		font-size: 30px;
+		margin-left: 15%;
+}
+

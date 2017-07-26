@@ -1,0 +1,61 @@
+<html>
+<head>
+<meta charset="utf-8">
+  <title>Payment</title>
+  <link rel="stylesheet" type="text/css" href="final.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+<p id="brand">Alps<img src="brand.jpg" id="brandpic"></p>
+<p id="titlee">Make a Payment...</p>
+<div>
+<form id="myForm" >
+<b>Card Number</b> <span class="space"></span> <b>Security Code</b> <br>
+
+<input id="rasha" onKeyPress="ValueKeyPress()" onKeyUp="ValueKeyPress()" class="sizesize" type="text"  name="cn" size="16" placeholder="****  ****  ****  ****" maxlength="16" /><span class="space1"></span> <input class="sizesize" type="text"   name="sc" size="1" placeholder="****" maxlength="4"><span class="textarea" class="sizesize"/> ?</span>
+
+<span class="txty">Enter the 3 or 4 digits on the back of the card</span>
+<br>
+<b>Name on Card</b> <span class="space2"></span><b>Expiration</b> <br>
+<input class="sizesize" type="text"  name="name" size="16" maxlength="16" /><span class="space3"></span>
+<select>
+<option value="" disabled selected>MM</option>
+  <option value="Jan">01</option>
+  <option value="Feb">02</option>
+  <option value="Mar">03</option>
+  <option value="Apr">04</option>
+  <option value="May">05</option>
+  <option value="Jun">06</option>
+  <option value="Jul">07</option>
+  <option value="Aug">08</option>
+  <option value="Sep">09</option>
+  <option value="Oct">10</option>
+  <option value="Nov">11</option>
+  <option value="Dec">12</option>
+</select >
+<span class="slash"> / <span>
+<select>
+<option value="" disabled selected>YR</option>
+   <option value="seventeen">17</option>
+  <option value="eighteen">18</option>
+  <option value="nineteen">19</option>
+  <option value="twenty">20</option>
+  <option value="twentyone">21</option>
+</select>
+<br>
+<br>
+<br>
+Card Type &nbsp;&nbsp;&nbsp;&nbsp; <span><img id="dis" src="discover.jpg"> &nbsp; <img id="vis" src="visa.jpg"> &nbsp; <img id="mas" src="master.jpg"> &nbsp; <img id="ame" src="american.jpg"></span>
+<br/><br/>
+<span id="demoo"><span>
+
+</form> 
+
+</div>
+<input id="submit" type="submit" value="Process Payment">
+
+<script src="final.js"></script>
+
+</body>
+</html>

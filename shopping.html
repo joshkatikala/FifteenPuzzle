@@ -1,0 +1,100 @@
+<html>
+<head>
+<meta charset="utf-8">
+  <title>Shopping</title>
+  <link rel="stylesheet" type="text/css" href="final.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+<p id="brand">Alps<img src="brand.jpg" id="brandpic"></p>
+<p id="titlee">Shopping Cart </p>
+<form id="myForm" action="final.html">
+  <input id="ooo" type="button" onclick="myFunction()" value="Ready to Checkout">
+</form>
+
+<script>
+function myFunction() {
+    document.getElementById("myForm").submit();
+}
+</script>
+
+<span id="label1">Price &nbsp;&nbsp;&nbsp;&nbsp; <span id="label2">Quantity</span></span>
+<hr>
+ <img src="item1.jpg" height="180px" width="180px">
+
+<span>Travel Select Control 28" Rolling Drop Bottom Duffel</span>
+
+ <span  type="text" id="labelp" onKeyPress="ValueKeyPress()" onKeyUp="ValueKeyPress()">100.99</span> 
+ &nbsp;&nbsp;&nbsp;&nbsp; 
+ <input type="text" id="myNumber" value="1" onKeyPress="ValueKeyPress()" onKeyUp="ValueKeyPress()"/>
+ 
+<hr>
+ <img src="item2.jpg" height="180px" width="180px">
+
+<span>Canon EOS Rebel T6 DSLR Camera with 18-55mm Lens</span>
+
+ <span  type="text" id="labelp2" onKeyPress="ValueKeyPress()" onKeyUp="ValueKeyPress()">449.00</span> 
+ &nbsp;&nbsp;&nbsp;&nbsp; 
+ <input type="text" id="myNumber2" value="1" onKeyPress="eValueKeyPress()" onKeyUp="eValueKeyPress()"/>
+<hr>
+
+</body>
+
+
+<script>
+    function ValueKeyPress()
+    {
+       var myNumber = document.getElementById("myNumber");
+        var s = myNumber.value;
+
+        var labelp = document.getElementById("labelp");
+		 r = labelp.innerText;
+			var shi = s * r;
+			labelp.innerText = shi;
+		
+		if(s==""){
+			labelp.innerText = "100.99";
+		
+		}
+		if(s=="0"){
+			labelp.innerText = "100.99";
+		
+		}
+		if(s=="1"){
+			labelp.innerText = "100.99";
+		
+		}
+		
+    }
+	
+	 function eValueKeyPress()
+    {
+       var myNumber2 = document.getElementById("myNumber2");
+        var k = myNumber2.value;
+
+        var labelp2 = document.getElementById("labelp2");
+		 t = labelp2.innerText;
+			var shinn = k * t;
+			labelp2.innerText = shinn;
+			
+		if(k==""){
+			labelp2.innerText = "499.00";
+		
+		}
+		if(k=="0"){
+			labelp2.innerText = "499.00";
+		
+		}
+		if(k=="1"){
+			labelp2.innerText = "499.00";
+		
+		}
+		function myFunction() {
+    document.getElementById("myForm").submit();
+}
+         
+    }
+		
+</script> 
+</html>
